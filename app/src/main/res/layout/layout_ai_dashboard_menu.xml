@@ -13,7 +13,7 @@
         android:padding="5dp"
         android:orientation="vertical">
         <ViewStub
-            android:id="@+id/dashboard_item_sound_mode"
+            android:id="@+id/stub_dashboard_item_sound_mode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/item_view_dashboard_menuitem"
@@ -21,7 +21,7 @@
             tools:visibility="visible"
             />
         <ViewStub
-            android:id="@+id/dashboard_item_equalizer"
+            android:id="@+id/stub_dashboard_item_equalizer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/item_view_dashboard_menuitem"
@@ -29,7 +29,7 @@
             tools:visibility="visible"
             />
         <ViewStub
-            android:id="@+id/dashboard_item_woofer"
+            android:id="@+id/stub_dashboard_item_woofer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/item_view_dashboard_menuitem"
@@ -37,7 +37,7 @@
             tools:visibility="visible"
             />
         <ViewStub
-            android:id="@+id/dashboard_item_spacefit"
+            android:id="@+id/stub_dashboard_item_spacefit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/item_view_dashboard_menuitem"
@@ -45,7 +45,7 @@
             tools:visibility="visible"
             />
         <ViewStub
-            android:id="@+id/dashboard_item_advanced_audio"
+            android:id="@+id/stub_dashboard_item_advanced_audio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout="@layout/item_view_dashboard_menuitem"
