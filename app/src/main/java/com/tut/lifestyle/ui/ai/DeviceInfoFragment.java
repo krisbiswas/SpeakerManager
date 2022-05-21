@@ -11,9 +11,7 @@ import com.tut.lifestyle.R;
 
 public class DeviceInfoFragment extends Fragment {
 
-    public DeviceInfoFragment() {
-        // Required empty public constructor
-    }
+    public static final String TAG = "DeviceInfoFragment";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

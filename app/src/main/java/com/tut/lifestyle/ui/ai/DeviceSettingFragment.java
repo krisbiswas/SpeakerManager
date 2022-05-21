@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import com.tut.lifestyle.R;
 
 public class DeviceSettingFragment extends Fragment {
+    public static final String TAG = "DeviceSettingFragment";
+
     public DeviceSettingFragment() {
         // Required empty public constructor
     }
@@ -23,6 +25,6 @@ public class DeviceSettingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_device_info, container, false);
+        return inflater.inflate(R.layout.fragment_device_setting, container, false);
     }
 }

@@ -1,17 +1,19 @@
 package com.tut.lifestyle.data;
 
+import android.util.Pair;
+
 import java.util.Arrays;
 import java.util.List;
 
-import kotlin.Pair;
-
 // If any functions value is null, means not supported
 public class PluginDevice {
+
+//    #############################################################################
     private String deviceName;
     private String modelName;
-    private Integer locationID;
-    private Integer deviceID;
-    private Integer cloudID;
+    private int locationID;
+    private int deviceID;
+    private int cloudID;
     private boolean isAI = true;
 //    Device connected to cloud
     private boolean isCloudConnected = true;
@@ -24,15 +26,17 @@ public class PluginDevice {
     private List<Integer> advEqSetting = Arrays.asList(5,5,5,5);
     private List<Integer> basicEqSetting = Arrays.asList(5,5);
     private String advancedAudio = "Standard";
-    private Boolean spaceFit;
-    private Boolean woofer;
+    private boolean spaceFit;
+    private boolean woofer;
     private String firmwareVersion = "0.1.0";
     //    network rssi value on the scale of 100
     private int nwStatus = 100;
     private List<Integer> channelVol = Arrays.asList(5,5);
-    private Boolean alexaSupported;
-    private Boolean spotifySupported;
-    private Boolean chromeCastSupported;
+    private boolean alexaSupported;
+    private boolean spotifySupported;
+    private boolean chromeCastSupported;
+
+    //region Getters and Setters
 
     public String getDeviceName() {
         return deviceName;
@@ -176,5 +180,10 @@ public class PluginDevice {
 
     public void setChromeCastSupported(Boolean chromeCastSupported) {
         this.chromeCastSupported = chromeCastSupported;
+    }
+    //endregion
+
+    public void subScribe(){
+
     }
 }

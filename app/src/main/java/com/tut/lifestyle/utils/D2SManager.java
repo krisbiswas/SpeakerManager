@@ -1,7 +1,7 @@
 package com.tut.lifestyle.utils;
 
 import com.tut.lifestyle.data.PluginDevice;
-import com.tut.lifestyle.ocfs.RemoteRepresentationReceiver;
+import com.tut.lifestyle.ocfs.RemoteRepresentationListener;
 
 import java.util.List;
 import java.util.Set;
@@ -18,14 +18,19 @@ public class D2SManager {
         return INSTANCE;
     }
 
-    Set<RemoteRepresentationReceiver> remoteListeners;
+    Set<RemoteRepresentationListener> remoteListeners;
+
+    public void setPluginDevice(PluginDevice pluginDevice) {
+        this.pluginDevice = pluginDevice;
+    }
 
     public PluginDevice getPluginDevice() {
         return pluginDevice;
     }
 
-    public void register(RemoteRepresentationReceiver receiver){
-
+    public void register(RemoteRepresentationListener receiver){
+        // Register listeners for receiving the responses
+        remoteListeners.add(receiver);
     }
 
     public void getRemoteRepresentation(String uri){

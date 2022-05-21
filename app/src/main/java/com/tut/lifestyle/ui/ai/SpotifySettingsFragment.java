@@ -11,6 +11,8 @@ import com.tut.lifestyle.R;
 
 public class SpotifySettingsFragment extends Fragment {
 
+    public static final String TAG = "SpotifySettingsFragment";
+
     public SpotifySettingsFragment() {
         // Required empty public constructor
     }

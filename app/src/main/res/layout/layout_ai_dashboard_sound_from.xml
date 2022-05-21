@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="20dp">
@@ -12,13 +11,20 @@
         android:gravity="center"
         android:padding="15dp"
         android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:text="Sound From"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" />
         <ImageView
             android:id="@+id/iv_connection_type_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="141dp"
-            tools:layout_editor_absoluteY="108dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:adjustViewBounds="true"
+            android:maxHeight="120dp"
+            android:maxWidth="120dp"
+            android:src="@drawable/sample_avatar" />
 
         <TextView
             android:id="@+id/tv_device_name"
@@ -26,7 +32,7 @@
             android:gravity="center"
             android:textSize="20dp"
             android:layout_height="wrap_content"
-            tools:text="Galaxy Fold 3" />
+            android:text="Dummy Phone" />
 
         <TextView
             android:id="@+id/tv_connection_type"
@@ -34,6 +40,6 @@
             android:gravity="center"
             android:textSize="16dp"
             android:layout_height="wrap_content"
-            tools:text="WiFi" />
+            android:text="Dummy Connection" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

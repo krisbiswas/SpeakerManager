@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.tut.lifestyle.R;
 
 public class AlexaSettingsFragment extends Fragment {
+    public static final String TAG = "AlexaSettingsFragment";
 
     public AlexaSettingsFragment() {
         // Required empty public constructor

@@ -17,12 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SoundFromFragment extends Fragment {
-
+    public static final String TAG = "SoundFromFragment";
     private List<String> mDeviceNames;
     private List<String> mConnectionTypes;
-
-    public SoundFromFragment() {
-    }
     
     @Override
     public void onCreate(Bundle savedInstanceState) {

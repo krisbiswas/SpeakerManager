@@ -1,5 +1,5 @@
 package com.tut.lifestyle.ocfs;
 
-public interface RemoteRepresentationReceiver {
+public interface RemoteRepresentationListener {
     void onRepresentationReceived();
 }

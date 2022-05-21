@@ -17,8 +17,11 @@
                 android:id="@+id/iv_device_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="200dp"
+                android:maxWidth="200dp"
                 android:padding="20dp"
-                tools:srcCompat="@tools:sample/avatars"/>
+                android:src="@drawable/sample_avatar"/>
 
             <Space
                 android:layout_width="match_parent"

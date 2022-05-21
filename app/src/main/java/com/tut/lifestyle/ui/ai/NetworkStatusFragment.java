@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import com.tut.lifestyle.R;
 
 public class NetworkStatusFragment extends Fragment {
-
+    public static final String TAG = "NetworkStatusFragment";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
