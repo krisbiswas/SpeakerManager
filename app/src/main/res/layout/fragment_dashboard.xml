@@ -1,47 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ai.DashboardFragment">
+    android:scrollbars="none">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:divider="@drawable/divider"
+        >
+        <ImageView
+            android:id="@+id/iv_device_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageView
-                android:id="@+id/iv_device_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxHeight="200dp"
-                android:maxWidth="200dp"
-                android:padding="20dp"
-                android:src="@drawable/sample_avatar"/>
+            android:adjustViewBounds="true"
+            android:maxHeight="200dp"
+            android:maxWidth="200dp"
+            android:padding="20dp"
+            android:contentDescription="Device Type Image"
+            android:src="@drawable/sample_avatar"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+        <include layout="@layout/layout_ai_dashboard_sound_from"/>
 
-            <include layout="@layout/layout_ai_dashboard_sound_from"/>
+        <include layout="@layout/layout_ai_dashboard_player"/>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
+        <include layout="@layout/layout_ai_dashboard_menu"/>
+    </LinearLayout>
 
-            <include layout="@layout/layout_ai_dashboard_player"/>
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
-
-            <include layout="@layout/layout_ai_dashboard_menu"/>
-        </LinearLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</ScrollView>

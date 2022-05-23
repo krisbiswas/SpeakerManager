@@ -1,4 +1,4 @@
-package com.tut.lifestyle.ui.ai;
+package com.tut.lifestyle.ui.common;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +9,9 @@ import androidx.fragment.app.Fragment;
 
 import com.tut.lifestyle.R;
 
-public class NetworkStatusFragment extends Fragment {
-    public static final String TAG = "NetworkStatusFragment";
+public class OfflineFragment extends Fragment {
+
+    public static String TAG = "OfflineFragment";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,8 @@ public class NetworkStatusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_network_status, container, false);
+        View root = inflater.inflate(R.layout.fragment_offline, container, false);
+        root.setOnClickListener((v)->{});
+        return root;
     }
 }

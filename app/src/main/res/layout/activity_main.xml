@@ -6,7 +6,7 @@
     tools:context=".MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/dashboard_main_fragment_container"
+        android:id="@+id/dashboard_fragment_container"
         android:name="com.tut.lifestyle.ui.ai.DashboardFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

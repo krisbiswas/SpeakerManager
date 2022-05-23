@@ -14,52 +14,46 @@
         android:showDividers="middle"
         android:divider="@drawable/divider"
         android:orientation="vertical">
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_sound_mode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/function_menuitem"
-            android:inflatedId="@+id/menu_item_sound_mode"
+        <include
+            android:id="@+id/menu_item_sound_mode"
+            layout="@layout/function_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_equalizer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/function_menuitem"
-            android:inflatedId="@+id/menu_item_equalizer"
+        <include
+            android:id="@+id/menu_item_equalizer"
+            layout="@layout/function_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_woofer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/function_menuitem"
-            android:inflatedId="@+id/menu_item_woofer"
+        <include
+            android:id="@+id/menu_item_woofer"
+            layout="@layout/function_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_spacefit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/switch_menuitem"
-            android:inflatedId="@+id/menu_item_spacefit"
+        <include
+            android:id="@+id/menu_item_autoeq"
+            layout="@layout/function_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_ava"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/switch_menuitem"
-            android:inflatedId="@+id/menu_item_ava"
+        <include
+            android:id="@+id/menu_item_spacefit"
+            layout="@layout/switch_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
-        <ViewStub
-            android:id="@+id/stub_dashboard_item_advanced_audio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout="@layout/function_menuitem"
-            android:inflatedId="@+id/menu_item_advanced_audio"
+        <include
+            android:id="@+id/menu_item_ava"
+            layout="@layout/switch_menuitem"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+        <include
+            android:id="@+id/menu_item_advanced_audio"
+            layout="@layout/function_menuitem"
+            android:visibility="gone"
             tools:visibility="visible"
             />
     </LinearLayout>

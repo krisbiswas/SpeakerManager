@@ -15,7 +15,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:contentDescription="item icon"
+            android:contentDescription="Item icon"
             android:maxWidth="60dp"
             android:maxHeight="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="marquee"
                 android:lines="1"
+                android:visibility="gone"
                 tools:text="KUGUKSDHdsfdsfsUIASHD" />
         </LinearLayout>
 
@@ -58,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/ic_arrow_right_48"
+            android:src="@drawable/ic_arrow_right_36"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

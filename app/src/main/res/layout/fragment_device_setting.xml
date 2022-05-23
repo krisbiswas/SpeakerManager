@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:circularflow_radiusInDP="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ViewStub
+            android:id="@+id/stub_network_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/function_menuitem"
+            tools:visibility="visible"/>
+        <ViewStub
+            android:id="@+id/stub_bt_pairing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/function_menuitem"
+            tools:visibility="visible"/>
+        <ViewStub
+            android:id="@+id/stub_channel_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/function_menuitem"
+            tools:visibility="visible"/>
+        <ViewStub
+            android:id="@+id/stub_iot_hub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/function_menuitem"
+            tools:visibility="visible"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
