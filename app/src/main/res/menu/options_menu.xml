@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/device_settings"
+        android:title="Device Settings"/>
+    <item android:id="@+id/alexa_settings"
+        android:title="Alexa"/>
+    <item android:id="@+id/spotify_settings"
+        android:title="Spotify Settings"/>
+    <item android:id="@+id/device_info"
+        android:title="Device Info"/>
+</menu>
