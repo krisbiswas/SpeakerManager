@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/translucent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Offline"
+                android:textColor="@color/blue_200"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AOF NODS JFOLSD FOIDSNFO Fns dofns dofnm sdskn dsf sdf jl sdfdo ifndsof" />
+            <TextView
+                android:id="@+id/tv_learn_more"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Learn More"
+                android:gravity="right"
+                android:textColor="@color/blue_200"
+                android:paddingRight="10dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</FrameLayout>
