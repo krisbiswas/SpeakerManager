@@ -22,11 +22,24 @@
             android:contentDescription="Device Type Image"
             android:src="@drawable/sample_avatar"/>
 
-        <include layout="@layout/layout_ai_dashboard_sound_from"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/sound_from_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.tut.lifestyle.ui.ai.SoundFromViewFragment"/>
 
-        <include layout="@layout/layout_ai_dashboard_player"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/player_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.tut.lifestyle.ui.ai.PlayerFragment"/>
 
-        <include layout="@layout/layout_ai_dashboard_menu"/>
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/functions_menu_view_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="com.tut.lifestyle.ui.ai.FunctionMenuFragment"/>
+
     </LinearLayout>
 
 </ScrollView>

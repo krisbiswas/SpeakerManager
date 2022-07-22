@@ -19,4 +19,6 @@ public class OCFAttributes {
     public static final String device_name = "/devicename";
     public static final String device_loc = "/deviceloc";
     public static final String spk_vol = "/volume";
+    public static final String inputsource = "/inputsource";
+    public static final String sleeptimer = "/sleeptimer";
 }

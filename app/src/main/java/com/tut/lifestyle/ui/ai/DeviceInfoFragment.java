@@ -25,6 +25,7 @@ public class DeviceInfoFragment extends Fragment implements RemoteRepresentation
         ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
         assert actionBar != null;
         actionBar.setTitle(TITLE);
+        D2SManager.getInstance().register(this);
     }
 
     @Override

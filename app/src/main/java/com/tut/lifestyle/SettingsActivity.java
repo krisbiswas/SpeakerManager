@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.tut.lifestyle.data.PluginDevice;
-import com.tut.lifestyle.ui.ai.AlexaSettingsFragment;
-import com.tut.lifestyle.ui.ai.DeviceSettingFragment;
+import com.tut.lifestyle.ui.ai.setting.AlexaSettingsFragment;
+import com.tut.lifestyle.ui.ai.setting.DeviceSettingFragment;
 import com.tut.lifestyle.ui.ai.setting.NetworkStatusFragment;
 import com.tut.lifestyle.ui.ai.setting.SpotifySettingsFragment;
 import com.tut.lifestyle.ui.common.OfflineFragment;

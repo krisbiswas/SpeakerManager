@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout-land/fragment_dashboard_non_ai.xml" value="0.3342342342342342" />
         <entry key="app/src/main/res/layout-sw600dp-land/fragment_dashboard_non_ai.xml" value="0.14" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_dashboard.xml" value="0.33" />
+        <entry key="app/src/main/res/layout-sw600dp/fragment_dashboard_ai.xml" value="0.25" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_dashboard_non_ai.xml" value="0.144921875" />
         <entry key="app/src/main/res/layout/activity_device_info.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_funtions.xml" value="0.19322916666666667" />
@@ -34,16 +35,28 @@
         <entry key="app/src/main/res/layout/dashboard_switch_menuitem.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_alexa.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_dashboard_ai.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard_non_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_device_info.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_device_setting.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/fragment_function_menu.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_function_menu_ai.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_function_menu_non_ai.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_input_source_non_ai.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_network_status.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_offline.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_player.xml" value="0.1796875" />
+        <entry key="app/src/main/res/layout/fragment_sound_from.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_sound_from_device.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_sound_from_device_list.xml" value="0.18020833333333333" />
+        <entry key="app/src/main/res/layout/fragment_sound_from_non_ai.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_sound_from_view.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_sound_from_view_ai.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/fragment_sound_from_view_non_ai.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_spotify_settings.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/item_view_dashboard_menuitem.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/item_view_sound_from.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/layout_action_bar_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/layout_action_bar_non_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/layout_ai_dashboard_menu.xml" value="0.25" />

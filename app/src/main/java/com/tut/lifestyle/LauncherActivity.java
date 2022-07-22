@@ -19,7 +19,7 @@ public class LauncherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launcher);
         findViewById(R.id.btn_plugin_launch).setOnClickListener((view)->{
             Intent launchMainIntent = new Intent(this, MainActivity.class);
-            //            createAIPluginDevice(launchMainIntent);
+//            createAIPluginDevice(launchMainIntent);
             createPluginDevice(launchMainIntent);
             addLaunchDetails(launchMainIntent);
             startActivity(launchMainIntent);
