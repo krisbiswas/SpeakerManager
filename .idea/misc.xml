@@ -33,12 +33,14 @@
         <entry key="app/src/main/res/layout/activity_settings.xml" value="0.18" />
         <entry key="app/src/main/res/layout/dashboard_function_menuitem.xml" value="0.5366528354080221" />
         <entry key="app/src/main/res/layout/dashboard_switch_menuitem.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_advanced_audio.xml" value="0.20260416666666667" />
         <entry key="app/src/main/res/layout/fragment_alexa.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_dashboard_ai.xml" value="0.17760416666666667" />
         <entry key="app/src/main/res/layout/fragment_dashboard_non_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_device_info.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/fragment_device_setting.xml" value="0.1921875" />
+        <entry key="app/src/main/res/layout/fragment_equalizer.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/layout/fragment_function_menu.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_function_menu_ai.xml" value="0.19270833333333334" />
         <entry key="app/src/main/res/layout/fragment_function_menu_non_ai.xml" value="0.19270833333333334" />
@@ -57,6 +59,7 @@
         <entry key="app/src/main/res/layout/fragment_spotify_settings.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/item_view_dashboard_menuitem.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_view_sound_from.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/layout_action_bar.xml" value="0.33" />
         <entry key="app/src/main/res/layout/layout_action_bar_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/layout_action_bar_non_ai.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/layout_ai_dashboard_menu.xml" value="0.25" />
@@ -67,6 +70,7 @@
         <entry key="app/src/main/res/layout/layout_common_player.xml" value="0.33" />
         <entry key="app/src/main/res/layout/layout_dashboard_menu.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/layout_dashboard_sound_from.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/layout_hub_setup.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/layout_media_player.xml" value="0.33" />
         <entry key="app/src/main/res/layout/layout_non_ai_dashboard_menu.xml" value="0.1921875" />
         <entry key="app/src/main/res/layout/layout_non_ai_dashboard_player.xml" value="0.25" />

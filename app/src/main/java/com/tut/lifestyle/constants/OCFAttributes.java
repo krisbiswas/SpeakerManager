@@ -21,4 +21,5 @@ public class OCFAttributes {
     public static final String spk_vol = "/volume";
     public static final String inputsource = "/inputsource";
     public static final String sleeptimer = "/sleeptimer";
+    public static final String smart_hub = "/iothub";
 }

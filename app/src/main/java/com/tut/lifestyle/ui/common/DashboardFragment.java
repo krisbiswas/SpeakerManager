@@ -60,6 +60,7 @@ public class DashboardFragment extends Fragment implements RemoteRepresentationL
         D2SManager.getInstance().getRemoteRepresentation(OCFAttributes.spaceFit);
         D2SManager.getInstance().getRemoteRepresentation(OCFAttributes.ava);
         D2SManager.getInstance().getRemoteRepresentation(OCFAttributes.adv_audio);
+        D2SManager.getInstance().getRemoteRepresentation(OCFAttributes.smart_hub);
     }
 
     @Override

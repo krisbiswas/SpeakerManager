@@ -9,7 +9,7 @@ import android.net.wifi.WifiManager;
 import androidx.fragment.app.Fragment;
 
 import com.tut.lifestyle.DeviceInfoActivity;
-import com.tut.lifestyle.FuntionsActivity;
+import com.tut.lifestyle.FunctionsActivity;
 import com.tut.lifestyle.SettingsActivity;
 import com.tut.lifestyle.constants.OCFAttributes;
 import com.tut.lifestyle.data.PluginDevice;
@@ -125,6 +125,9 @@ public class AppUtils implements DeviceUpdateListener{
             case "Advanced Audio Setting":
                 attr = OCFAttributes.adv_audio;
                 break;
+            case "Smart Hub":
+                attr = OCFAttributes.smart_hub;
+                break;
         }
         return attr;
     }
@@ -161,8 +164,8 @@ public class AppUtils implements DeviceUpdateListener{
                 return DeviceInfoActivity.class;
             case SettingsActivity.TAG:
                 return SettingsActivity.class;
-            case FuntionsActivity.TAG:
-                return FuntionsActivity.class;
+            case FunctionsActivity.TAG:
+                return FunctionsActivity.class;
         }
         return null;
     }

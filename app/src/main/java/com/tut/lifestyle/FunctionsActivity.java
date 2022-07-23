@@ -9,22 +9,28 @@ import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.tut.lifestyle.data.PluginDevice;
-import com.tut.lifestyle.ui.ai.DeviceInfoFragment;
+import com.tut.lifestyle.ui.ai.funtions.AdvancedAudioFragment;
+import com.tut.lifestyle.ui.ai.funtions.AutoEQFragment;
+import com.tut.lifestyle.ui.ai.funtions.EqualizerFragment;
+import com.tut.lifestyle.ui.ai.funtions.SmartHubFragment;
+import com.tut.lifestyle.ui.ai.funtions.SoundModeFragment;
+import com.tut.lifestyle.ui.ai.funtions.WooferFragment;
 import com.tut.lifestyle.utils.AppUtils;
 import com.tut.lifestyle.utils.listeners.DeviceUpdateListener;
 
-public class DeviceInfoActivity extends BaseActivity implements DeviceUpdateListener {
+public class FunctionsActivity extends BaseActivity implements DeviceUpdateListener {
 
-    public static final String TAG = "DeviceInfoActivity";
+    public static final String TAG = "FunctionsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_device_info);
+        setContentView(R.layout.activity_funtions);
         AppUtils.getInstance().addConnectionListener(this);
         AppUtils.getInstance().addDeviceListener(this);
-        setToolBar(DeviceInfoFragment.TAG, null);
-        launchFragment(DeviceInfoFragment.TAG);
+        String fragment = getIntent().getStringExtra("Fragment");
+        setToolBar(fragment, null);
+        launchFragment(fragment);
     }
 
     @Override
@@ -58,8 +64,23 @@ public class DeviceInfoActivity extends BaseActivity implements DeviceUpdateList
     private void launchFragment(String fragmentName) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         switch(fragmentName){
-            case DeviceInfoFragment.TAG:
-                transaction.add(R.id.fragment_container,DeviceInfoFragment.class, null).commit();
+            case SoundModeFragment.TAG:
+                transaction.add(R.id.fragment_container,SoundModeFragment.class, null).commit();
+                break;
+            case EqualizerFragment.TAG:
+                transaction.add(R.id.fragment_container,EqualizerFragment.class, null).commit();
+                break;
+            case AutoEQFragment.TAG:
+                transaction.add(R.id.fragment_container,AutoEQFragment.class, null).commit();
+                break;
+            case WooferFragment.TAG:
+                transaction.add(R.id.fragment_container,WooferFragment.class, null).commit();
+                break;
+            case AdvancedAudioFragment.TAG:
+                transaction.add(R.id.fragment_container,AdvancedAudioFragment.class, null).commit();
+                break;
+            case SmartHubFragment.TAG:
+                transaction.add(R.id.fragment_container,SmartHubFragment.class, null).commit();
                 break;
         }
     }

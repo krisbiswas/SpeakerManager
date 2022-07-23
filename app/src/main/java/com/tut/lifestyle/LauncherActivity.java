@@ -19,8 +19,8 @@ public class LauncherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_launcher);
         findViewById(R.id.btn_plugin_launch).setOnClickListener((view)->{
             Intent launchMainIntent = new Intent(this, MainActivity.class);
-//            createAIPluginDevice(launchMainIntent);
-            createPluginDevice(launchMainIntent);
+            createAIPluginDevice(launchMainIntent);
+//            createPluginDevice(launchMainIntent);
             addLaunchDetails(launchMainIntent);
             startActivity(launchMainIntent);
         });
@@ -37,6 +37,7 @@ public class LauncherActivity extends AppCompatActivity {
         device.setEqualizerState("Tone");
 //        device.setWooferSetting(4);
         device.setSpaceFit(true);
+        device.setSmartHubStatus("Not Using");
         D2SManager.getInstance().setPluginDevice(device);
     }
 
@@ -54,7 +55,7 @@ public class LauncherActivity extends AppCompatActivity {
 
     private void addLaunchDetails(Intent intent) {
         intent.putExtra("DeviceID","6sdad6654dasd435ads3cds");
-        intent.putExtra("CloudID","45681354");
+        intent.putExtra("CloudID",5681354);
         intent.putExtra("device name", ((EditText)findViewById(R.id.et_device_name)).getText());
         intent.putExtra("device loc", ((EditText)findViewById(R.id.et_device_name)).getText());
         intent.putExtra("cloud id", ((EditText)findViewById(R.id.et_device_name)).getText());

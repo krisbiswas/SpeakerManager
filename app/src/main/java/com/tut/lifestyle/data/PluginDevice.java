@@ -47,6 +47,7 @@ public class PluginDevice {
     private Boolean chromeCastSupported;
     private Pair<Integer, Integer> channelSetting;
     private Boolean autoEq = null;
+    private String smartHubStatus = "Not Using";
 
     //region Getters and Setters
     public String getDeviceName() {
@@ -232,6 +233,14 @@ public class PluginDevice {
     public void setChannelSetting(Pair<Integer, Integer> channelSetting) {
         this.channelSetting = channelSetting;
     }
+
+    public String getSmartHubStatus() {
+        return "Not Using";
+    }
+
+    public void setSmartHubStatus(String status) {
+        this.smartHubStatus = status;
+    }
     //endregion
 
     public void subScribe(){
@@ -312,6 +321,9 @@ public class PluginDevice {
                 break;
             case OCFAttributes.adv_audio:
                 response = getAdvancedAudio();
+                break;
+            case OCFAttributes.smart_hub:
+                response = getSmartHubStatus();
                 break;
         }
         System.out.println(TAG+"Getting data "+uri+"-"+response);
