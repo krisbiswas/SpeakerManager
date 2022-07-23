@@ -113,9 +113,6 @@ public class AppUtils implements DeviceUpdateListener{
             case "Woofer":
                 attr = OCFAttributes.woofer;
                 break;
-            case "Auto Equalizer":
-                attr = OCFAttributes.auto_eq;
-                break;
             case "Space Fit":
                 attr = OCFAttributes.spaceFit;
                 break;
@@ -127,6 +124,18 @@ public class AppUtils implements DeviceUpdateListener{
                 break;
             case "Smart Hub":
                 attr = OCFAttributes.smart_hub;
+                break;
+            case "Network Status":
+                attr = OCFAttributes.nw_status;
+                break;
+            case "Channel Volume":
+                attr = OCFAttributes.channel_vol;
+                break;
+            case "Auto Equalizer":
+                attr = OCFAttributes.auto_eq;
+                break;
+            case "Audio Feedback":
+                attr = OCFAttributes.audio_feedback;
                 break;
         }
         return attr;

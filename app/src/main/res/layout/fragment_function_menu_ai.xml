@@ -34,12 +34,6 @@
             tools:visibility="visible"
             />
         <include
-            android:id="@+id/menu_item_autoeq"
-            layout="@layout/layout_ai_function_menuitem"
-            android:visibility="gone"
-            tools:visibility="visible"
-            />
-        <include
             android:id="@+id/menu_item_spacefit"
             layout="@layout/layout_ai_switch_menuitem"
             android:visibility="gone"

@@ -27,7 +27,7 @@ public class SettingsActivity extends BaseActivity implements DeviceUpdateListen
 
         String fragment = getIntent().getStringExtra("Fragment");
         setToolBar(fragment, null);
-        launchFragment(getIntent().getStringExtra("Fragment"));
+        launchFragment(fragment);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class SettingsActivity extends BaseActivity implements DeviceUpdateListen
         return super.onOptionsItemSelected(item);
     }
 
-    private void launchFragment(String fragmentName) {
+    public void launchFragment(String fragmentName) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         switch(fragmentName){
             case DeviceSettingFragment.TAG:

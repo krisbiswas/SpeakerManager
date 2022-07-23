@@ -40,14 +40,16 @@ public class PluginDevice {
     private Boolean voiceAssistant = null;
     private Integer wooferSetting = null;
     private String firmwareVersion = "0.0.0";
-    //    network rssi value on the scale of 100
-    private int nwStatus = 100;
+    //    network strength value on the scale of 5
+    private Integer nwStatus = 0;
     private List<Integer> channelVol = Arrays.asList(5,5);
     private Boolean spotifySupported;
     private Boolean chromeCastSupported;
-    private Pair<Integer, Integer> channelSetting;
+    private Pair<Integer, Integer> channelSetting = new Pair<>(60,60);
     private Boolean autoEq = null;
     private String smartHubStatus = "Not Using";
+    private String audioFeedback = null;
+    private Boolean btPairStatus = null;
 
     //region Getters and Setters
     public String getDeviceName() {
@@ -186,7 +188,7 @@ public class PluginDevice {
         this.firmwareVersion = firmwareVersion;
     }
 
-    public int getNwStatus() {
+    public Integer getNwStatus() {
         return nwStatus;
     }
 
@@ -226,6 +228,14 @@ public class PluginDevice {
         this.voiceAssistant = voiceAssist;
     }
 
+    public Boolean getBtPairingModeStatus(){
+        return btPairStatus;
+    }
+
+    public void setBtPairingModeStatus(boolean pair){
+        this.btPairStatus = pair;
+    }
+
     public Pair<Integer, Integer> getChannelSetting() {
         return channelSetting;
     }
@@ -234,8 +244,16 @@ public class PluginDevice {
         this.channelSetting = channelSetting;
     }
 
+    public String getAudioFeedback() {
+        return audioFeedback;
+    }
+
+    public void setAudioFeedback(String lang) {
+        this.audioFeedback = lang;
+    }
+
     public String getSmartHubStatus() {
-        return "Not Using";
+        return smartHubStatus;
     }
 
     public void setSmartHubStatus(String status) {
@@ -290,9 +308,6 @@ public class PluginDevice {
             case OCFAttributes.spk_vol:
                 response = getSpkVol().toString();
                 break;
-            case OCFAttributes.channel_vol:
-                response = getChannelSetting().first+","+ getChannelSetting().second;
-                break;
             case OCFAttributes.soundMode:
                 response = getSoundMode();
                 break;
@@ -306,9 +321,6 @@ public class PluginDevice {
             case OCFAttributes.eq_adv:
                 // Stream to string
                 response = advEqSetting.toString();
-                break;
-            case OCFAttributes.auto_eq:
-                response = (hasAutoEq() != null)?hasAutoEq().toString():null;
                 break;
             case OCFAttributes.woofer:
                 response = (getWooferSetting() != null)?getWooferSetting().toString() : null;
@@ -324,6 +336,21 @@ public class PluginDevice {
                 break;
             case OCFAttributes.smart_hub:
                 response = getSmartHubStatus();
+                break;
+            case OCFAttributes.nw_status:
+                response = getNwStatus().toString();
+                break;
+            case OCFAttributes.bt_pair:
+                response = (getBtPairingModeStatus() != null)?getBtPairingModeStatus().toString():null;
+                break;
+            case OCFAttributes.channel_vol:
+                response = getChannelSetting().first+","+getChannelSetting().second;
+                break;
+            case OCFAttributes.auto_eq:
+                response = (hasAutoEq() != null)?hasAutoEq().toString():null;
+                break;
+            case OCFAttributes.audio_feedback:
+                response = getAudioFeedback();
                 break;
         }
         System.out.println(TAG+"Getting data "+uri+"-"+response);
@@ -346,18 +373,11 @@ public class PluginDevice {
             case OCFAttributes.spk_vol:
                 setSpkVol(Integer.parseInt(val.toString()));
                 break;
-            case OCFAttributes.channel_vol:
-                String[] channelVolData = ((String)val).split(",");
-                setChannelSetting(new Pair<Integer, Integer>(Integer.parseInt(channelVolData[0]), Integer.parseInt(channelVolData[1])));
-                break;
             case OCFAttributes.soundMode:
                 setSoundMode(val.toString());
                 break;
             case OCFAttributes.eq:
                 setEqualizerState(val.toString());
-                break;
-            case OCFAttributes.auto_eq:
-                setAutoEq(Boolean.parseBoolean(val.toString()));
                 break;
             case OCFAttributes.woofer:
                 setWooferSetting(Integer.parseInt(val.toString()));
@@ -370,6 +390,19 @@ public class PluginDevice {
                 break;
             case OCFAttributes.adv_audio:
                 setAdvancedAudio(val.toString());
+                break;
+            case OCFAttributes.nw_status:
+                setNwStatus(Integer.parseInt(val.toString()));
+                break;
+            case OCFAttributes.channel_vol:
+                String[] channelVolData = ((String)val).split(",");
+                setChannelSetting(new Pair<Integer, Integer>(Integer.parseInt(channelVolData[0]), Integer.parseInt(channelVolData[1])));
+                break;
+            case OCFAttributes.auto_eq:
+                setAutoEq(Boolean.parseBoolean(val.toString()));
+                break;
+            case OCFAttributes.audio_feedback:
+                setAudioFeedback(val.toString());
                 break;
         }
         response.setAttr(uri);

@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.tut.lifestyle.R;
@@ -21,9 +19,9 @@ public class NetworkStatusFragment extends Fragment implements RemoteRepresentat
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
-        assert actionBar != null;
-        actionBar.setTitle(TITLE);
+//        ActionBar actionBar = ((AppCompatActivity) requireActivity()).getSupportActionBar();
+//        assert actionBar != null;
+//        actionBar.setTitle(TITLE);
     }
 
     @Override

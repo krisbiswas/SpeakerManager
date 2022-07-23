@@ -18,7 +18,6 @@ import com.tut.lifestyle.constants.OCFConstants;
 import com.tut.lifestyle.data.OCFResponse;
 import com.tut.lifestyle.ocfs.RemoteRepresentationListener;
 import com.tut.lifestyle.ui.ai.funtions.AdvancedAudioFragment;
-import com.tut.lifestyle.ui.ai.funtions.AutoEQFragment;
 import com.tut.lifestyle.ui.ai.funtions.EqualizerFragment;
 import com.tut.lifestyle.ui.ai.funtions.SmartHubFragment;
 import com.tut.lifestyle.ui.ai.funtions.SoundModeFragment;
@@ -37,7 +36,6 @@ public class FunctionMenuFragment extends Fragment implements RemoteRepresentati
     private CardView mItemWoofer;
     private CardView mItemSpaceFit;
     private CardView mItemAVA;
-    private CardView mItemAutoEq;
     private CardView mItemAdvancedAudio;
     private CardView mItemSmartHub;
 
@@ -63,23 +61,14 @@ public class FunctionMenuFragment extends Fragment implements RemoteRepresentati
 
     private void initViews() {
         mItemSoundMode = root.findViewById(R.id.menu_item_sound_mode);
-        mItemSoundMode.setOnClickListener(v -> {});
         mSoundModeValue = mItemSoundMode.findViewById(R.id.tv_function_value);
         mItemEqualizer = root.findViewById(R.id.menu_item_equalizer);
         mEqModeValue = mItemEqualizer.findViewById(R.id.tv_function_value);
-        mItemEqualizer.setOnClickListener(v -> {});
         mItemWoofer = root.findViewById(R.id.menu_item_woofer);
-        mItemWoofer.setOnClickListener(v -> {});
         mItemSpaceFit = root.findViewById(R.id.menu_item_spacefit);
-        mItemSpaceFit.setOnClickListener(v -> {});
         mItemAVA = root.findViewById(R.id.menu_item_ava);
-        mItemAVA.setOnClickListener(v -> {});
-        mItemAutoEq = root.findViewById(R.id.menu_item_autoeq);
-        mItemAutoEq.setOnClickListener(v -> {});
         mItemAdvancedAudio = root.findViewById(R.id.menu_item_advanced_audio);
-        mItemAdvancedAudio.setOnClickListener(v -> {});
         mItemSmartHub = root.findViewById(R.id.menu_item_smart_hub);
-        mItemSmartHub.setOnClickListener(v -> {});
     }
 
     private void setupMenuItem(View menuItem, String title, String subtitle) {
@@ -136,8 +125,6 @@ public class FunctionMenuFragment extends Fragment implements RemoteRepresentati
                 fragmentTag = EqualizerFragment.TAG;break;
             case R.id.menu_item_woofer:
                 fragmentTag = WooferFragment.TAG;break;
-            case R.id.menu_item_autoeq:
-                fragmentTag = AutoEQFragment.TAG;break;
             case R.id.menu_item_advanced_audio:
                 fragmentTag = AdvancedAudioFragment.TAG;break;
             case R.id.menu_item_smart_hub:
@@ -178,11 +165,6 @@ public class FunctionMenuFragment extends Fragment implements RemoteRepresentati
                         int wooferVal = Integer.parseInt(response.getVal());
                         if(wooferVal >= 0){
                             setupMenuItem(mItemWoofer, "Woofer", null);
-                        }
-                        break;
-                    case OCFAttributes.auto_eq:
-                        if(response.getVal() != null){
-                            setupMenuItem(mItemAutoEq, "Auto Equalizer",null);
                         }
                         break;
                     case OCFAttributes.spaceFit:

@@ -10,7 +10,6 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.tut.lifestyle.data.PluginDevice;
 import com.tut.lifestyle.ui.ai.funtions.AdvancedAudioFragment;
-import com.tut.lifestyle.ui.ai.funtions.AutoEQFragment;
 import com.tut.lifestyle.ui.ai.funtions.EqualizerFragment;
 import com.tut.lifestyle.ui.ai.funtions.SmartHubFragment;
 import com.tut.lifestyle.ui.ai.funtions.SoundModeFragment;
@@ -69,9 +68,6 @@ public class FunctionsActivity extends BaseActivity implements DeviceUpdateListe
                 break;
             case EqualizerFragment.TAG:
                 transaction.add(R.id.fragment_container,EqualizerFragment.class, null).commit();
-                break;
-            case AutoEQFragment.TAG:
-                transaction.add(R.id.fragment_container,AutoEQFragment.class, null).commit();
                 break;
             case WooferFragment.TAG:
                 transaction.add(R.id.fragment_container,WooferFragment.class, null).commit();
