@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.tut.lifestyle.data.PluginDevice;
@@ -37,16 +35,6 @@ public class FunctionsActivity extends BaseActivity implements DeviceUpdateListe
         AppUtils.getInstance().removeConnctionListener(this);
         AppUtils.getInstance().removeDeviceListener(this);
         super.onDestroy();
-    }
-
-    private void setToolBar(String title, @Nullable String subTitle) {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP);
-        actionBar.setTitle(title);
-        if(subTitle!=null){
-            actionBar.setSubtitle(subTitle);
-        }
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_left_36);
     }
 
     @Override

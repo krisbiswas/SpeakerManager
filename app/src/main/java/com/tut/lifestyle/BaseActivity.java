@@ -3,11 +3,14 @@ package com.tut.lifestyle;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.tut.lifestyle.data.PluginDevice;
 import com.tut.lifestyle.ui.common.OfflineFragment;
+import com.tut.lifestyle.utils.AppUtils;
 import com.tut.lifestyle.utils.listeners.ConnectionListener;
 
 public class BaseActivity extends AppCompatActivity implements ConnectionListener{
@@ -17,6 +20,21 @@ public class BaseActivity extends AppCompatActivity implements ConnectionListene
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    protected void setToolBar(String title, @Nullable String subTitle) {
+        Toolbar toolbar = findViewById(R.id.action_bar);
+        System.out.println("Kris: "+title+", "+subTitle);
+        toolbar.setTitleTextColor(AppUtils.getInstance().getPrimaryColor());
+        toolbar.setTitle(title);
+        toolbar.setSubtitleTextColor(AppUtils.getInstance().getPrimaryColor());
+        if(subTitle!=null){
+            toolbar.setSubtitle(subTitle);
+        }
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_left_36);
     }
 
     @Override

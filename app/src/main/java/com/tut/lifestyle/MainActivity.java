@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -29,12 +30,15 @@ public class MainActivity extends BaseActivity implements DeviceUpdateListener {
     //region System Callbacks
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        TypedValue typedVal = new TypedValue();
+        getTheme().resolveAttribute(R.attr.colorOnPrimary, typedVal, true);
+        AppUtils.getInstance().setPrimaryColor(typedVal.data);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(WifiManager.SUPPLICANT_CONNECTION_CHANGE_ACTION);
-        registerReceiver(AppUtils.getInstance().getWifiConnectionReceiver(), intentFilter);
-
+        getApplicationContext().registerReceiver(AppUtils.getInstance().getWifiConnectionReceiver(), intentFilter);
         System.out.println(D2SManager.getInstance().getPluginDevice());
 
         D2SManager.getInstance().getPluginDevice().setCloudID(getIntent().getIntExtra("CloudID",-1));
@@ -44,7 +48,10 @@ public class MainActivity extends BaseActivity implements DeviceUpdateListener {
         AppUtils.getInstance().addConnectionListener(this);
         AppUtils.getInstance().addDeviceListener(this);
 
-        setToolBar(D2SManager.getInstance().getPluginDevice().getDeviceName(), D2SManager.getInstance().getPluginDevice().getDeviceLoc());
+        PluginDevice pluginDevice = D2SManager.getInstance().getPluginDevice();
+        setToolBar(pluginDevice.getDeviceName(), pluginDevice.getDeviceLoc());
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE|ActionBar.DISPLAY_HOME_AS_UP);
         launchFragment(DashboardFragment.TAG);
     }
 
@@ -53,20 +60,12 @@ public class MainActivity extends BaseActivity implements DeviceUpdateListener {
         System.out.println("Main Destroyed");
         AppUtils.getInstance().removeConnctionListener(this);
         AppUtils.getInstance().removeDeviceListener(this);
-        unregisterReceiver(AppUtils.getInstance().getWifiConnectionReceiver());
+        getApplicationContext().unregisterReceiver(AppUtils.getInstance().getWifiConnectionReceiver());
         super.onDestroy();
     }
     //endregion
 
     // region Action Bar
-    private void setToolBar(String devName, String devLoc) {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE|ActionBar.DISPLAY_HOME_AS_UP);
-        actionBar.setTitle(devName);
-        actionBar.setSubtitle(devLoc);
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_left_36);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options_menu, menu);

@@ -32,6 +32,8 @@ import java.util.Set;
 public class AppUtils implements DeviceUpdateListener{
     public static final String TAG = "AppUtils";
     private static AppUtils INSTANCE;
+    private int primaryColor = 0;
+
     public static AppUtils getInstance(){
         if(INSTANCE == null){
             INSTANCE = new AppUtils();
@@ -177,5 +179,13 @@ public class AppUtils implements DeviceUpdateListener{
                 return FunctionsActivity.class;
         }
         return null;
+    }
+
+    public void setPrimaryColor(int data) {
+        primaryColor = data;
+    }
+
+    public int getPrimaryColor() {
+        return primaryColor;
     }
 }
