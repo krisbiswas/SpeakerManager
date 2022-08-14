@@ -13,4 +13,12 @@
     <color name="translucency_dark">#D0303030</color>
     <color name="translucency_light">#D0FFFFFF</color>
     <color name="transparent">#00000000</color>
+
+    <color name="background_color">#F2000000</color>
+
+    <color name="foreground_color">#b42379</color>
+
+    <color name="background_text_color">#808080</color>
+
+    <color name="foreground_text_color">#eeeeee</color>
 </resources>
