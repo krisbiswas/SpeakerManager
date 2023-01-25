@@ -65,7 +65,7 @@ public class TestSTAutomation {
 //        device.executeShellCommand("am force-stop com.samsung.android.oneconnect");
     }
 
-    private void unlockDevice(UiDevice device) throws RemoteException, IOException {
+    private void unlockDevice(UiDevice device) throws RemoteException {
         int deviceWidth = device.getDisplayWidth();
         int deviceHeight = device.getDisplayHeight();
         int startY = 3*deviceHeight/4;
@@ -167,7 +167,7 @@ public class TestSTAutomation {
 //      TODO Wait till verification loading to go
     }
 
-    private void selectFile(int dirStructure, String fileName) throws UiObjectNotFoundException {
+    private void selectFile(@NonNull UiDevice device, int dirStructure, String fileName) throws UiObjectNotFoundException {
         UiScrollable dirListScrollable = new UiScrollable(new UiSelector().resourceId("com.google.android.documentsui:id/dir_list"));
         UiSelector selector;
         UiSelector childProps = new UiSelector().className(android.widget.TextView.class)
@@ -175,8 +175,14 @@ public class TestSTAutomation {
                 .textStartsWith(fileName);
         if(dirStructure == 1){
             // For Grid View Layout
-            selector = new UiSelector().className(androidx.cardview.widget.CardView.class)
-                    .childSelector(childProps);
+            UiObject card = device.findObject(new UiSelector().classNameMatches(".*CardView$"));
+            if(card.exists()){
+                selector = new UiSelector().classNameMatches(".*CardView$")
+                        .childSelector(childProps);
+            }else{
+                selector = new UiSelector().className(android.widget.FrameLayout.class)
+                        .childSelector(childProps);
+            }
         }else{
             // For List View Layout
             selector = new UiSelector().className(android.widget.LinearLayout.class)
@@ -206,8 +212,14 @@ public class TestSTAutomation {
         UiSelector selector;
         if(dirStructure == 1){
             // For Grid View Layout
-            selector = new UiSelector().className(androidx.cardview.widget.CardView.class)
-                    .childSelector(new UiSelector().resourceId("android:id/title").text(folderName));
+            UiObject card = device.findObject(new UiSelector().classNameMatches(".*CardView$"));
+            if(card.exists()){
+                selector = new UiSelector().classNameMatches(".*CardView$")
+                        .childSelector(new UiSelector().resourceId("android:id/title").text(folderName));
+            }else{
+                selector = new UiSelector().className(android.widget.FrameLayout.class)
+                        .childSelector(new UiSelector().resourceId("android:id/title").text(folderName));
+            }
         }else{
             // For List View Layout
             selector = new UiSelector().className(android.widget.LinearLayout.class)
@@ -230,11 +242,11 @@ public class TestSTAutomation {
                         .descriptionContains("List view")
                         .resourceId("com.google.android.documentsui:id/sub_menu_list")));
         gotoFileDirectory(device, listViewIcon.exists()?1:0, rootFolderInInternalStorage);
-        selectFile(listViewIcon.exists()?1:0, pluginFile);
+        selectFile(device, listViewIcon.exists()?1:0, pluginFile);
 
         UiObject copyPluginApkText = testModePage.getChildByText(new UiSelector().className("android.widget.TextView"), "Copy apk/ppk file");
         UiObject copyPluginApkBtn = copyPluginApkText.getFromParent(new UiSelector().resourceId("com.samsung.android.oneconnect:id/mainButton"));
         copyPluginApkBtn.click();
-        selectFile(listViewIcon.exists()?1:0, apkFile);
+        selectFile(device, listViewIcon.exists()?1:0, apkFile);
     }
 }
